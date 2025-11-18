@@ -1,0 +1,9 @@
+<%- include('partials/header', { title: 'Page Title', user: user }) %>
+
+<h2>Upload YouTube Video</h2>
+<form method="post" action="/teacher/videos/upload">
+  <label>Title:</label><input type="text" name="title" required />
+  <label>YouTube URL:</label><input type="text" name="youtube_url" required />
+  <button type="submit">Upload</button>
+</form>
+<%- include('partials/footer') %>

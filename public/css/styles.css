@@ -1,0 +1,247 @@
+/* ---------- Global Theme & Reset ---------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #002b80 0%, #0040b3 100%);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ---------- Navbar ---------- */
+nav {
+  background: #001f5c;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+nav a {
+  color: #ffffff;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+nav a:hover {
+  color: #a8d0ff;
+  transform: scale(1.05);
+}
+
+/* ---------- Containers ---------- */
+.container, .materials-page {
+  padding: 30px;
+  animation: fadeIn 0.8s forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Section Headings ---------- */
+.materials-section h3 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin: 30px 0 15px;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+  padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* CSS */
+.button-9 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;         /* or a specific max-width */
+  max-width: 250px;    /* optional: limits large screens */
+  text-decoration: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+.material-card .button-9 {
+  margin-top: 10px;
+  align-self: flex-start;
+}
+.material-card .btn {
+  margin-top: 10px;
+  align-self: flex-start;
+}
+.material-card {
+  background: #f1f6ff;
+  color: #002b80;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertically center */
+  align-items: center;       /* horizontally center */
+  text-align: center;        /* center text */
+  gap: 12px;
+  min-height: 180px;         /* ensures enough vertical space */
+}
+.material-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.material-card .btn {
+  margin-top: 5px;
+  align-self: center; /* ensures button stays centered */
+}
+
+
+.button-9:disabled {
+  cursor: default;
+}
+
+
+/* ---------- Grid Layout ---------- */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card.small-link {
+  color: #cce0ff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* ---------- Material Card ---------- */
+.material-card {
+  background: #f1f6ff;
+  color: #002b80;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.material-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* ---------- Titles ---------- */
+.material-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #002b80;
+}
+
+/* ---------- Video Thumbnails ---------- */
+.video-thumb {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.video-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* ---------- Document Links ---------- */
+.material-card {
+  background: #f1f6ff;
+  color: #002b80;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* horizontally center */
+  justify-content: center;   /* vertically center */
+  text-align: center;        /* center text */
+  gap: 12px;
+  min-height: 200px;         /* adjust for consistent spacing */
+}
+
+.material-card .material-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #002b80;
+}
+
+.material-card .btn,
+.material-card .button-9,
+.material-card a:not(.btn) {
+  align-self: center;        /* center button horizontally */
+  margin-top: 8px;
+  text-align: center;
+}
+
+
+
+.material-card a:hover {
+  color: #ffcc00;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    display: block;
+    margin: 5px 10px;
+  }
+}

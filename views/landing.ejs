@@ -1,0 +1,21 @@
+<%- include('partials/header', { title: 'Page Title', user: user }) %>
+
+
+<section class="hero">
+  <div style="display: flex; justify-content: center; text-align: center;">
+  <div style="max-width: 600px;">
+    <h1>Welcome to the Learning Portal</h1>
+    <p>Teachers upload documents, videos, and tests. Students view materials and submit tests.</p>
+    <% if (!user) { %>
+      <a class="btn btn-blue" href="/signup" style="margin-bottom: 20px; display: inline-block;">Get Started</a>
+
+    <% } %>
+  </div>
+</div>
+  <div class="material-card" style="background-color: #0040b3 !important;">
+        <div class="material-title" style="color: white;">TEACHERS' MEETING</div>
+        <a class="btn" href="/uploads/documents/PROGRAM_CERC.docx" target="_blank">Take A Look</a>
+      </div>
+</section>
+
+<%- include('partials/footer') %>

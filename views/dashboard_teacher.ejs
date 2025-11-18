@@ -1,0 +1,44 @@
+<%- include('partials/header', { title: 'TEACHING IN THE AGE OF A.I.', user: user }) %>
+
+<h2>Your Materials</h2>
+
+<section>
+  <h3>Useful Resources</h3>
+  <div class="card-list">
+    <% docs.forEach(d => { %>
+      <div class="material-card">
+  <div class="material-title"><%= d.title %></div>
+  <div><%= d.uploaded_at %></div>
+  <% if (d.file_path) { %>
+    <a class="btn" href="/uploads/documents/<%= d.file_path %>" target="_blank">Download</a>
+  <% } %>
+  <% if (d.link) { %>
+    <a class="btn" href="<%= d.link %>" target="_blank">Visit Link</a>
+  <% } %>
+</div>
+
+    <% }) %>
+  </div>
+  <div style="margin-top: 20px;">
+    <a class="btn btn-blue" href="/teacher/documents/upload">Upload Document</a>
+  </div>
+</section>
+
+<section>
+  <h3>Students Talk</h3>
+  <div class="card-list">
+    <% vids.forEach(v => { %>
+      <div class="material-card">
+        <div class="material-title"><%= v.title %></div>
+        <img class="video-thumb" src="https://img.youtube.com/vi/<%= v.youtube_id %>/hqdefault.jpg" alt="<%= v.title %>">
+        <a class="button-9" href="https://www.youtube.com/watch?v=<%= v.youtube_id %>" target="_blank">Watch</a>
+      </div>
+    <% }) %>
+  </div>
+  <div style="margin-top: 20px;">
+    <a class="btn btn-blue" href="/teacher/videos/upload">Upload Video</a>
+  </div>
+</section>
+<%- include('partials/footer') %>
+
+

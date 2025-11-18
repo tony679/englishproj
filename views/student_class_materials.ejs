@@ -1,0 +1,66 @@
+<%- include('partials/header', { title: 'Page Title', user: user }) %>
+
+
+<div class="container materials-page">
+  <h2>Class: <%= className %></h2>
+
+  <!-- Documents Section -->
+  <section class="materials-section">
+    <h3>Documents</h3>
+    <% if (docs.length === 0) { %>
+      <p>No documents published yet.</p>
+    <% } else { %>
+      <div class="card-list">
+        <% docs.forEach(d => { %>
+          <div class="card material-card">
+            <a href="/uploads/documents/<%= d.filename %>" target="_blank">
+              <div class="material-title"><%= d.original_name %></div>
+              <div class="material-meta">Uploaded: <%= d.uploaded_at %></div>
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </section>
+
+  <!-- Videos Section -->
+  <section class="materials-section">
+    <h3>Video Library</h3>
+    <% if (vids.length === 0) { %>
+      <p>No videos published yet.</p>
+    <% } else { %>
+      <div class="card-list video-list">
+        <% vids.forEach(v => { %>
+          <div class="card material-card">
+            <div class="material-title"><%= v.title %></div>
+            <a href="https://www.youtube.com/watch?v=<%= v.youtube_id %>" target="_blank">
+              <img src="https://img.youtube.com/vi/<%= v.youtube_id %>/0.jpg" alt="<%= v.title %>" />
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </section>
+
+  <!-- Tests / Assignments Section -->
+  <section class="materials-section">
+    <h3>Assignments & Tests</h3>
+    <% if (assignments.length === 0) { %>
+      <p>No assignments published yet.</p>
+    <% } else { %>
+      <div class="card-list">
+        <% assignments.forEach(a => { %>
+          <div class="card material-card">
+            <strong><%= a.title %></strong><br/>
+            <% if (a.due_date) { %>
+              <span>Due: <%= new Date(a.due_date).toLocaleString() %></span><br/>
+            <% } %>
+            <a class="btn btn-blue" href="/student/class/<%= classId %>/assignments/<%= a.id %>">Open & Submit</a>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </section>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,11 @@
+<%- include('partials/header', { title: 'Page Title', user: user }) %>
+
+<h2>Available Tests</h2>
+<% tests.forEach(t => { %>
+  <div class="card">
+    <strong><%= t.title %></strong>
+    <span>by <%= t.teacher_email %></span><br/>
+    <a href="/student/tests/<%= t.id %>">Open & Submit</a>
+  </div>
+<% }) %>
+<%- include('partials/footer') %>

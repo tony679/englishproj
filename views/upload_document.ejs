@@ -1,0 +1,17 @@
+<%- include('partials/header', { title: 'Page Title', user: user }) %>
+
+<form action="/teacher/documents/upload" method="POST" enctype="multipart/form-data">
+  <label>Title:</label>
+  <input type="text" name="title" required>
+
+  <label>Upload a file:</label>
+  <input type="file" name="docfile"> <!-- ✅ this must match .single('docfile') -->
+
+  <label>Or add a link:</label>
+  <input type="url" name="link">
+
+  <button type="submit" class="btn">Upload</button>
+</form>
+
+
+<%- include('partials/footer') %>

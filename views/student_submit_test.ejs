@@ -1,0 +1,25 @@
+<%- include('partials/header', { title: 'Page Title', user: user }) %>
+
+<h2><%= test.title %></h2>
+<p><%= test.description %></p>
+<a href="#">Teacher: <%= test.teacher_email %></a>
+
+<% if (submission) { %>
+  <div class="card">
+    <p>Your submission: <a href="/uploads/submissions/<%= submission.file_path %>" target="_blank">Download</a></p>
+    <% if (submission.grade) { %>
+      <p><strong>Grade:</strong> <%= submission.grade %></p>
+      <p><strong>Feedback:</strong> <%= submission.feedback %></p>
+      <p><em>Graded at <%= submission.graded_at %></em></p>
+    <% } else { %>
+      <p>Your submission has not been graded yet.</p>
+    <% } %>
+  </div>
+<% } else { %>
+  <form method="post" action="/student/tests/<%= test.id %>" enctype="multipart/form‑data">
+    <label>Upload your answer document/image/pdf:</label>
+    <input type="file" name="studentFile" accept=".pdf,.doc,.docx,image/*" required />
+    <button type="submit">Submit</button>
+  </form>
+<% } %>
+<%- include('partials/footer') %>

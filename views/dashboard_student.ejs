@@ -1,0 +1,42 @@
+<%- include('partials/header', { title: 'Student Dashboard', user: user }) %>
+
+<h2>📘 Welcome to Your Learning Portal</h2>
+
+<!-- 📄 Documents -->
+<section>
+  <h3>📄 Useful resources</h3>
+  <div class="card-list">
+    <% docs.forEach(d => { %>
+      <div class="material-card">
+        <div class="material-title"><%= d.title %></div>
+        <div><%= d.uploaded_at %></div>
+        
+        <% if (d.file_path) { %>
+          <a class="btn" href="/uploads/documents/<%= d.file_path %>" target="_blank">Download Resource</a>
+        <% } else if (d.link) { %>
+          <a class="btn" href="<%= d.link %>" target="_blank">Visit Resource</a>
+        <% } else { %>
+          <span class="btn disabled">No resource available</span>
+        <% } %>
+        
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+
+<!-- 🎥 Videos -->
+<section>
+  <h3>🎥 Students Talk</h3>
+  <div class="card-list">
+    <% vids.forEach(v => { %>
+      <div class="material-card">
+        <div class="material-title"><%= v.title %></div>
+        <img class="video-thumb" src="https://img.youtube.com/vi/<%= v.youtube_id %>/hqdefault.jpg" alt="<%= v.title %>">
+        <a class="btn" href="https://www.youtube.com/watch?v=<%= v.youtube_id %>" target="_blank">Watch</a>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

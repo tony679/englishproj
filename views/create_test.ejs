@@ -1,0 +1,9 @@
+<%- include('partials/header', { title: 'Page Title', user: user }) %>
+
+<h2>Create Test</h2>
+<form method="post" action="/teacher/tests/create">
+  <label>Title:</label><input type="text" name="title" required />
+  <label>Description:</label><textarea name="description" rows="3"></textarea>
+  <button type="submit">Create Test</button>
+</form>
+<%- include('partials/footer') %>
