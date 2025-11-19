@@ -1,13 +1,15 @@
 <%- include('partials/header', { title: 'Page Title', user: user }) %>
 
-<h2>Sign Up</h2>
+<h2 class="login-header">Sign Up</h2>
 <form method="post" action="/signup">
-  <label>Email:</label><input type="email" name="email" required />
-  <label>Password:</label><input type="password" name="password" required />
-  <label>Role:</label>
-  <select name="role" required>
-    <option value="student">Student</option>
-  </select>
-  <button type="submit">Sign Up</button>
+  <div class="signup-form">
+    <label>Email:</label><input type="email" name="email" required />
+    <label>Password:</label><input type="password" name="password" required />
+    <label>Role:</label>
+    <select name="role" required>
+      <option value="student">Student</option>
+    </select>
+    <button type="submit">Sign Up</button>
+  </div>
 </form>
 <%- include('partials/footer') %>
